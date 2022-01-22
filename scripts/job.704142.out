@@ -1,0 +1,15 @@
+==========================================
+SLURM_CLUSTER_NAME = param-shivay
+SLURM_JOB_ACCOUNT = comp_sci_engg
+SLURM_JOB_ID = 704142
+SLURM_JOB_NAME = rfs
+SLURM_JOB_NODELIST = gpu006
+SLURM_JOB_USER = dhruv.gupta.cse17.iitbhu
+SLURM_JOB_UID = 5463
+SLURM_JOB_PARTITION = gpu
+SLURM_TASK_PID = 44325
+SLURM_SUBMIT_DIR = /home/dhruv.gupta.cse17.iitbhu/rfs/scripts
+SLURM_CPUS_ON_NODE = 1
+SLURM_NTASKS = 
+SLURM_TASK_PID = 44325
+==========================================
