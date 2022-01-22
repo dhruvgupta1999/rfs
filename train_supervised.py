@@ -237,6 +237,9 @@ def main():
         eta_min = opt.learning_rate * (opt.lr_decay_rate ** 3)
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, opt.epochs, eta_min, -1)
 
+    print(model)
+    sys.stdout.flush()
+
     # routine: supervised pre-training
     for epoch in range(1, opt.epochs + 1):
 
