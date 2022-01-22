@@ -186,6 +186,9 @@ def main():
                                                                          test_std_feat,
                                                                          test_time))
 
+    print(model)
+    sys.stdout.flush()
+
 
 if __name__ == '__main__':
     main()
