@@ -30,8 +30,8 @@ def normalize(x):
     return out
 
 
-def meta_test(net, testloader, use_logit=True, is_norm=True, classifier='LR', opt=None):
-    net = net.eval()
+def meta_test(model, testloader, use_logit=True, is_norm=True, classifier='LR', opt=None):
+    model = model.eval()
     acc = []
 
     with torch.no_grad():
@@ -44,12 +44,12 @@ def meta_test(net, testloader, use_logit=True, is_norm=True, classifier='LR', op
             query_xs = query_xs.view(-1, channel, height, width)
 
             if use_logit:
-                support_features = net(support_xs).view(support_xs.size(0), -1)
-                query_features = net(query_xs).view(query_xs.size(0), -1)
+                support_features = model(support_xs).view(support_xs.size(0), -1)
+                query_features = model(query_xs).view(query_xs.size(0), -1)
             else:
-                feat_support, _ = net(support_xs, is_feat=True)
+                feat_support, _ = model(support_xs, is_feat=True)
                 support_features = feat_support[-1].view(support_xs.size(0), -1)
-                feat_query, _ = net(query_xs, is_feat=True)
+                feat_query, _ = model(query_xs, is_feat=True)
                 query_features = feat_query[-1].view(query_xs.size(0), -1)
 
             if is_norm:
